@@ -21,23 +21,35 @@ const P1 = new Ship(10, 10);
 
 console.log(P1.fireBullet());
 
+class Alien {
+    constructor(HP,xCoord,yCoord,xSpeed,ySpeed){
+        this.HP = HP;
+        this.xCoord = xCoord;
+        this.yCoord = yCoord;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+
+    }
+
+    move(){
+        if(this.xCoord < this.xSpeed && this.yCoord < this.ySpeed){
+           this.xCoord = this.xCoord + this.xSpeed
+           console.log(this.xCoord);
+           this.yCoord = this.yCoord + this.ySpeed
+           console.log(this.yCoord)
+        }else {
+            this.xCoord = this.xCoord - this.xSpeed
+           this.yCoord = this.yCoord - this.ySpeed
+        }
+
+        return `${this.xCoord}, ${this.yCoord}`
+    }
+
+    
+}
 
 
-// function Bullet(Speed, Damage) {
-//     return {
-//     Speed, Damage
-//     }
-//     }
-    
-//     function Ship(HP, speed) {
-//     return {
-//     HP,
-//     speed,
-//     fireBullet() {
-//     return Bullet(1,1)
-//     }
-//     }
-//     }
-    
-//     const test = Ship(1,1)
-//     console.log(test.fireBullet())
+
+const test = new Alien(100, 10, 10, 1, 1)
+
+
